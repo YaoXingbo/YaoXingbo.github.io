@@ -960,13 +960,12 @@
                             <h3 class="timeline-title">机器学习算法岗</h3>
                             <span class="timeline-date">2023.06 - 2023.09</span>
                         </div>
-                        <p class="timeline-company">阿里巴巴 - 达摩院</p>
+                        <p class="timeline-company">智位智能科技有限公司 - 技术部</p>
                         <div class="timeline-desc">
                             <ul>
-                                <li>负责推荐系统中的多路召回算法设计与优化，提高了商品曝光率和用户点击率</li>
-                                <li>设计并实现基于深度学习的特征工程模块，对用户行为数据进行挖掘和分析</li>
-                                <li>优化排序模型，采用多目标优化策略，提升了推荐系统整体效果</li>
-                                <li>参与推荐系统A/B测试方案设计与效果评估，制定了多维度评价指标</li>
+                                <li>基于机器学习算法开发恶意URL检测系统，负责收集和处理400万条URL数据，通过设计正则表达式进行数据清洗，并实施向量化特征工程，解决协议干扰和文本稀疏性问题。</li>
+                                <li>设计并实现了一种基于Stacking集成学习（包括随机森林、支持向量机、朴素贝叶斯到逻辑回归）与gcForest的恶意URL检测算法，最终实现了98.75%的高准确率。</li>
+                                <li>利用Flask和Redis技术实现模型的服务化封装与部署，相关成果被发表在中文核心期刊。</li>
                             </ul>
                         </div>
                     </div>
@@ -991,11 +990,10 @@
                     <div class="project-content">
                         <h3 class="project-title">MagicCity: 基于卫星图像的3D城市生成</h3>
                         <p class="project-date"><i class="far fa-calendar-alt"></i> 2023.10 - 2025.03</p>
-                        <p class="project-desc">- 研发基于深度学习的生成模型，实现3D城市生成
-- 解决了传统生成模型在大场景任务中的纹理和几何失准问题
-- 设计了双模态编码器，融合CLIP语义特征与几何特征
-- 构建了城市级embedding空间，支持多样化控制生成
-- 提出了新的多视角一致性损失函数，保证生成结果的几何一致性</p>
+                        <p class="project-desc">- 研发基于深度学习的生成模型，实现3D城市生成，解决了传统生成模型在大场景任务中的纹理和几何失准问题
+- 设计了双模态编码器，融合CLIP语义特征与几何特征，构建了城市级embedding空间
+- 提出了多分支交叉注意力机制，实现了60帧多视角同步生成，最终合成的高质量3D城市在几何误差和纹理质量方面较基准方法提升了5%以上。
+- 该项目成果以第一作者身份撰写论文，并投递至计算机领域顶级会议ICCV </p>
                         <div class="project-tags">
                             <span class="project-tag">计算机视觉</span>
                             <span class="project-tag">生成式模型</span>
@@ -1011,15 +1009,15 @@
                     <div class="project-content">
                         <h3 class="project-title">新闻推荐场景下的用户行为预测</h3>
                         <p class="project-date"><i class="far fa-calendar-alt"></i> 2024.10 - 2025.03</p>
-                        <p class="project-desc">- 设计基于多路召回、特征工程和排序的推荐系统
-- 根据用户的历史点击行为预测未来的点击趋势，并推荐相关内容
-- 在召回阶段，采用UserCF、ItemCF和YoutubeDNN等算法进行多路召回
-- 结合新闻embedding和相似性规则有效解决了冷启动问题
-- 实现了实时特征更新机制，提高了模型对新闻时效性的敏感度</p>
+                        <p class="project-desc">- 设计基于多路召回、特征工程和排序的推荐系统，根据用户的历史点击行为预测未来的点击趋势，并推荐相关内容
+- 在召回阶段，采用UserCF、ItemCF和YoutubeDNN等算法进行多路召回，结合新闻embedding和相似性规则有效解决了冷启动问题
+- 特征工程阶段构建用户行为、新闻内容、时间衰减等多特征
+- 在排序阶段，使用Wide&Deep、DeepFM和DIN进行模型融合，优化推荐结果，最终AUC达到了0.8</p>
                         <div class="project-tags">
                             <span class="project-tag">推荐系统</span>
-                            <span class="project-tag">机器学习</span>
-                            <span class="project-tag">深度学习</span>
+                            <span class="project-tag">召回</span>
+                            <span class="project-tag">特征工程</span>
+                            <span class="project-tag">排序</span>
                         </div>
                     </div>
                 </div>
@@ -1032,13 +1030,13 @@
                         <h3 class="project-title">基于Stacking集成学习的恶意URL检测系统</h3>
                         <p class="project-date"><i class="far fa-calendar-alt"></i> 2022.07 - 2022.09</p>
                         <p class="project-desc">- 设计并实现了一种基于Stacking集成学习与gcForest的恶意URL检测算法
-- 通过多层模型融合提高检测准确率，达到95.7%的精度
+- 通过多层模型融合提高检测准确率，达到98.7%的精度
 - 利用Flask和Redis技术实现模型的服务化封装与部署
 - 设计了特征提取模块，从URL中提取语义和结构特征
 - 相关成果被发表在中文核心期刊《现代电子技术》</p>
                         <div class="project-tags">
-                            <span class="project-tag">网络安全</span>
                             <span class="project-tag">机器学习</span>
+                            <span class="project-tag">特征工程</span>
                             <span class="project-tag">集成学习</span>
                         </div>
                     </div>
