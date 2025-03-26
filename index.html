@@ -1,8 +1,521 @@
-<p>Hello 洒大地撒</p>
-<p>我是霸都丶傲天，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姚兴波 - 个人空间</title>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #4285f4;
+            --secondary: #34a853;
+            --accent: #fbbc05;
+            --danger: #ea4335;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark);
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        .header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10.5%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            transform: rotate(30deg);
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-left: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            font-family: 'ZCOOL QingKe HuangYou', cursive;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        /* 社交媒体图标 */
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-btn {
+            display: inline-block;
+            margin-right: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px);
+            background-color: white;
+        }
+        
+        .social-btn.email:hover { color: var(--danger); }
+        .social-btn.scholar:hover { color: var(--primary); }
+        .social-btn.github:hover { color: var(--dark); }
+        .social-btn.phone:hover { color: var(--secondary); }
+        
+        /* 内容卡片样式 */
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .papers .card-icon { background-color: var(--danger); }
+        .projects .card-icon { background-color: var(--secondary); }
+        .awards .card-icon { background-color: var(--accent); }
+        .skills .card-icon { background-color: #9c27b0; }
+        
+        h2 {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-size: 1.8em;
+            color: var(--dark);
+            margin: 0;
+        }
+        
+        /* 论文样式 */
+        .paper-item {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .paper-item:hover {
+            background-color: #e9ecef;
+            padding-left: 20px;
+        }
+        
+        .paper-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .paper-authors {
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        
+        .paper-journal {
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .paper-link a {
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .paper-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .paper-link i {
+            margin-right: 5px;
+        }
+        
+        /* 技能标签 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-category {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h3 {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            margin-bottom: 10px;
+            color: #495057;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: #9c27b0;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #e9ecef;
+            border-radius: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .skill-tag.ml { background-color: #e3f2fd; }
+        .skill-tag.ml:hover { background-color: #2196f3; }
+        
+        .skill-tag.prog { background-color: #e8f5e9; }
+        .skill-tag.prog:hover { background-color: #4caf50; }
+        
+        .skill-tag.lang { background-color: #fff3e0; }
+        .skill-tag.lang:hover { background-color: #ff9800; }
+        
+        /* 语言能力进度条 */
+        .language-skill {
+            margin-bottom: 15px;
+        }
+        
+        .language-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        /* 动画效果 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            
+            .profile-photo {
+                margin: 0 0 20px 0;
+                width: 150px;
+                height: 150px;
+            }
+            
+            .social-links {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile">
+                <div class="profile-info">
+                    <h1>姚兴波</h1>
+                    <p class="subtitle">香港科技大学(广州) | AI 一年级硕士研究生</p>
+                    <p>广州 | 24万奖学金 | 导师能得</p>
+                    
+                    <div class="social-links">
+                        <a href="mailto:your-email@connect.hkust-gz.edu.cn" class="social-btn email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://scholar.google.cz/citations?hl=zh-CN&pli=1&user=xAACtNMAAAAJ" target="_blank" class="social-btn scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/your-github" target="_blank" class="social-btn github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="tel:your-phone-number" class="social-btn phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                <img src="your-photo.jpg" alt="姚兴波照片" class="profile-photo floating">
+            </div>
+        </div>
+        
+        <div class="card papers">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2>论文发表</h2>
+            </div>
+            
+            <div class="paper-item">
+                <p class="paper-title">Row detection BASED navigation and guidance for agricultural robots and autonomous vehicles in row-crop fields: Methods and applications</p>
+                <p class="paper-authors">J Shi, Y Bai, Z Diao, J Zhou, X Yao, B Zhang</p>
+                <p class="paper-journal">Agronomy 13 (7), 1780, 2023</p>
+                <p class="paper-link">
+                    <a href="https://doi.org/10.3390/agronomy13071780" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> 查看论文
+                    </a>
+                </p>
+            </div>
+            
+            <div class="paper-item">
+                <p class="paper-title">Autonomous navigation and adaptive path planning in dynamic greenhouse environments utilizing improved LeGO-LOAM and OpenPlanner algorithms</p>
+                <p class="paper-authors">Xingbo Yao, Yuhao Bai, Baohua Zhang, Dahua Xu, Guangzheng Cao</p>
+                <p class="paper-journal">Journal of Field Robotics, 2024</p>
+                <p class="paper-link">
+                    <a href="#" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> 查看论文
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="card awards">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h2>奖项与荣誉</h2>
+            </div>
+            
+            <div class="paper-item">
+                <p class="paper-title">香港科技大学(广州) 24万奖学金</p>
+                <p class="paper-journal">2023-2024学年</p>
+            </div>
+            
+            <!-- 可以添加更多奖项 -->
+        </div>
+        
+        <div class="card projects">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h2>实习与项目经历</h2>
+            </div>
+            
+            <div class="paper-item">
+                <p class="paper-title">实习经历</p>
+                <p class="paper-journal">可以在此处添加您的实习经历详情</p>
+            </div>
+            
+            <div class="paper-item">
+                <p class="paper-title">项目经历</p>
+                <p class="paper-journal">可以在此处添加您的项目经历详情</p>
+            </div>
+        </div>
+        
+        <div class="card skills">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2>技能专长</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> 技术技能</h3>
+                    <div class="skill-tag ml">机器学习</div>
+                    <div class="skill-tag ml">深度学习</div>
+                    <div class="skill-tag ml">推荐系统算法</div>
+                    <div class="skill-tag ml">Sklearn</div>
+                    <div class="skill-tag ml">Pytorch</div>
+                    <div class="skill-tag ml">MySQL</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> 编程语言</h3>
+                    <div class="skill-tag prog">C/C++</div>
+                    <div class="skill-tag prog">Python</div>
+                    <div class="skill-tag prog">Java</div>
+                    <div class="skill-tag prog">Linux/Shell</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-language"></i> 语言能力</h3>
+                    <div class="language-skill">
+                        <div class="language-name">
+                            <span>英语 - 雅思6.5</span>
+                            <span>6.5/9</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 72%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-skill">
+                        <div class="language-name">
+                            <span>英语六级 - 501分</span>
+                            <span>501/710</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-skill">
+                        <div class="language-name">
+                            <span>英语四级 - 609分</span>
+                            <span>609/710</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 86%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+    <script>
+        // 添加一些简单的互动效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 技能标签点击效果
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1) rotate(5deg)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 500);
+                });
+            });
+            
+            // 卡片悬停效果增强
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseover', function() {
+                    const icon = this.querySelector('.card-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(360deg)';
+                        icon.style.transition = 'transform 0.5s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseout', function() {
+                    const icon = this.querySelector('.card-icon');
+                    if (icon) {
+                        icon.style.transform = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
