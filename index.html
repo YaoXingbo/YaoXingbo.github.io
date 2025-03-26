@@ -11,13 +11,11 @@
             --primary-color: #3498db;
             --secondary-color: #2ecc71;
             --text-color: #333;
-            --light-bg: #f0f2f5;
+            --light-bg: #f9f9f9;
             --card-bg: #fff;
             --border-radius: 8px;
             --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --content-width: 1000px;
-            --content-bg: #fff;
-            --paper-badge-color: #6c5ce7;
+            --paper-badge-color: #6c5ce7; /* 更改为紫色 */
         }
         
         * {
@@ -31,28 +29,19 @@
             background-color: var(--light-bg);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 30px 0;
-        }
-        
-        .main-container {
-            max-width: var(--content-width);
-            margin: 0 auto;
-            background-color: var(--content-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
         }
         
         .container {
-            max-width: 100%;
-            padding: 0 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         /* 头部样式 */
         .header {
             background: linear-gradient(135deg, #3498db, #2ecc71);
             color: #fff;
-            padding: 60px 0 40px;
+            padding: 100px 0 70px;
             position: relative;
             overflow: hidden;
         }
@@ -71,8 +60,8 @@
         }
         
         .header-image {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
             border: 5px solid rgba(255,255,255,0.3);
@@ -86,13 +75,20 @@
         }
         
         .name {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .name .greeting {
+            font-size: 1.5rem;
+            margin-right: 10px;
         }
         
         .title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 400;
             margin-bottom: 20px;
         }
@@ -103,17 +99,31 @@
         
         #changing-text {
             font-weight: 500;
-            transition: opacity 0.5s ease;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        #changing-text::after {
+            content: '|';
+            position: absolute;
+            right: -8px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
         
         .header-info {
-            margin-top: 25px;
+            margin-top: 30px;
         }
         
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #fff;
         }
         
@@ -150,7 +160,7 @@
         /* 导航样式 */
         .navbar {
             background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -160,7 +170,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            padding: 15px 0;
         }
         
         .logo {
@@ -191,21 +201,16 @@
         
         /* 通用部分样式 */
         .section {
-            padding: 60px 0;
-            background-color: var(--content-bg);
-        }
-        
-        .section:nth-child(odd) {
-            background-color: #f8f9fa;
+            padding: 80px 0;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
@@ -349,6 +354,10 @@
         }
         
         /* 荣誉奖项样式 */
+        .awards-section {
+            background-color: #f5f9fc;
+        }
+        
         .awards-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -403,6 +412,10 @@
         }
         
         /* 实习经历样式 */
+        .experience-section {
+            background-color: #fff;
+        }
+        
         .timeline {
             position: relative;
             max-width: 800px;
@@ -461,9 +474,13 @@
         }
         
         /* 项目经历样式 */
+        .projects-section {
+            background-color: #f5f9fc;
+        }
+        
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
         
@@ -527,7 +544,7 @@
         
         .project-tag {
             padding: 5px 10px;
-            background-color: #3498db;
+            background-color: var(--paper-badge-color);
             color: white;
             border-radius: 4px;
             font-size: 0.8rem;
@@ -537,7 +554,7 @@
         .footer {
             background-color: #2c3e50;
             color: #ecf0f1;
-            padding: 25px 0;
+            padding: 30px 0;
             text-align: center;
         }
         
@@ -580,467 +597,465 @@
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <!-- 头部部分 -->
-        <header class="header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="header-text">
-                        <h1 class="name">姚兴博</h1>
-                        <p class="title"><span id="static-text">我是</span> <span id="changing-text">人工智能研究者</span></p>
-                        <p>香港科技大学(广州) 计算机科学与工程系 硕士研究生</p>
-                        
-                        <div class="header-info">
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>广东省广州市南沙区香港科技大学(广州)</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>your.email@example.com</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+86 123 4567 8901</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fab fa-weixin"></i>
-                                <span>your_wechat_id</span>
-                            </div>
+    <!-- 头部部分 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="name"><span class="greeting">Hi 👋</span> 姚兴博</h1>
+                    <p class="title"><span id="static-text">我是</span> <span id="changing-text"></span></p>
+                    <p>我来自香港科技大学，信息枢纽 人工智能专业，硕士研究生（2024.9-2026.7）。师从<a href="https://www.hkust-gz.edu.cn/zh/people/hui-xiong/" style="color: white; text-decoration: underline;">熊辉</a></p>
+                    
+                    <div class="header-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>广东省广州市南沙区香港科技大学(广州)</span>
                         </div>
-                        
-                        <div class="social-links">
-                            <a href="https://github.com/YaoXingbo" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://scholar.google.cz/citations?user=xAACtNMAAAAJ&hl=zh-CN" class="social-link" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-file-pdf"></i></a>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>your.email@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+86 123 4567 8901</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-weixin"></i>
+                            <span>your_wechat_id</span>
                         </div>
                     </div>
                     
-                    <div class="header-image">
-                        <img src="0.png" alt="姚兴博">
+                    <div class="social-links">
+                        <a href="https://github.com/YaoXingbo" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://scholar.google.cz/citations?user=xAACtNMAAAAJ&hl=zh-CN" class="social-link" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-file-pdf"></i></a>
                     </div>
-                </div>
-            </div>
-        </header>
-        
-        <!-- 导航栏 -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">XB</div>
-                <ul class="nav-links">
-                    <li><a href="#skills">技能</a></li>
-                    <li><a href="#papers">论文</a></li>
-                    <li><a href="#awards">荣誉奖项</a></li>
-                    <li><a href="#experience">实习经历</a></li>
-                    <li><a href="#projects">项目经历</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <!-- 技能部分 -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">技能</h2>
-                    <p class="section-subtitle">我的专业技能和工具</p>
-                </div>
-                <div class="skills-container">
-                    <div class="skill-tag skill-dl">
-                        <i class="fas fa-network-wired"></i> 深度学习
-                    </div>
-                    <div class="skill-tag skill-ml">
-                        <i class="fas fa-robot"></i> 机器学习
-                    </div>
-                    <div class="skill-tag skill-recsys">
-                        <i class="fas fa-thumbs-up"></i> 推荐系统
-                    </div>
-                    <div class="skill-tag skill-pytorch">
-                        <i class="fas fa-fire"></i> PyTorch
-                    </div>
-                    <div class="skill-tag skill-sklearn">
-                        <i class="fas fa-brain"></i> Scikit-learn
-                    </div>
-                    <div class="skill-tag skill-recall">
-                        <i class="fas fa-search"></i> 召回
-                    </div>
-                    <div class="skill-tag skill-ranking">
-                        <i class="fas fa-sort-amount-down"></i> 排序
-                    </div>
-                    <div class="skill-tag skill-feature">
-                        <i class="fas fa-cubes"></i> 特征工程
-                    </div>
-                    <div class="skill-tag skill-aigc">
-                        <i class="fas fa-magic"></i> AIGC
-                    </div>
-                    <div class="skill-tag skill-c">
-                        <i class="fas fa-code"></i> C
-                    </div>
-                    <div class="skill-tag skill-cpp">
-                        <i class="fas fa-code"></i> C++
-                    </div>
-                    <div class="skill-tag skill-java">
-                        <i class="fab fa-java"></i> Java
-                    </div>
-                    <div class="skill-tag skill-python">
-                        <i class="fab fa-python"></i> Python
-                    </div>
-                    <div class="skill-tag skill-anaconda">
-                        <i class="fas fa-snake"></i> Anaconda
-                    </div>
-                    <div class="skill-tag skill-linux">
-                        <i class="fab fa-linux"></i> Linux
-                    </div>
-                    <div class="skill-tag skill-shell">
-                        <i class="fas fa-terminal"></i> Shell
-                    </div>
-                    <div class="skill-tag skill-mysql">
-                        <i class="fas fa-database"></i> MySQL
-                    </div>
-                    <div class="skill-tag skill-ros">
-                        <i class="fas fa-robot"></i> ROS
-                    </div>
-                    <div class="skill-tag skill-latex">
-                        <i class="fas fa-square-root-alt"></i> LaTeX
-                    </div>
-                    <div class="skill-tag skill-english">
-                        <i class="fas fa-language"></i> 英语六级501
-                    </div>
-                    <div class="skill-tag skill-english">
-                        <i class="fas fa-language"></i> 英语四级609
-                    </div>
-                    <div class="skill-tag skill-english">
-                        <i class="fas fa-language"></i> 雅思6.5
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 论文部分 -->
-        <section id="papers" class="section papers-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">论文</h2>
-                    <p class="section-subtitle">我的研究成果与学术贡献</p>
-                </div>
-                <div class="papers-container">
-                    <div class="paper-card">
-                        <div class="paper-image">
-                            <img src="1.png" alt="Paper Image">
-                        </div>
-                        <div class="paper-content">
-                            <h3 class="paper-title">Autonomous navigation and adaptive path planning in dynamic greenhouse environments utilizing improved LeGO-LOAM and Open Planner algorithms</h3>
-                            <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Bai, Y., et al.</p>
-                            <p class="paper-venue">Journal of Field Robotics (2023)</p>
-                            <div>
-                                <span class="paper-badge">中科院一区TOP</span>
-                                <span class="paper-badge">SCI</span>
-                                <span class="paper-badge">IF=8.3</span>
-                                <span class="paper-badge">第一作者</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="paper-card">
-                        <div class="paper-image">
-                            <img src="2.png" alt="Paper Image">
-                        </div>
-                        <div class="paper-content">
-                            <h3 class="paper-title">Adaptive Navigation for Robots in Unstructured Agricultural Environments Using Stable Feature Localization and Multi-Sensor Obstacle Detection</h3>
-                            <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Cao, G., et al.</p>
-                            <p class="paper-venue">Computers and Electronics in Agriculture (2024)</p>
-                            <div>
-                                <span class="paper-badge">中科院一区TOP</span>
-                                <span class="paper-badge">SCI</span>
-                                <span class="paper-badge">IF=8.7</span>
-                                <span class="paper-badge">第一作者</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="paper-card">
-                        <div class="paper-image">
-                            <img src="3.png" alt="Paper Image">
-                        </div>
-                        <div class="paper-content">
-                            <h3 class="paper-title">MagicCity: Geometry-Aware 3D City Generation from Satellite Imagery with Multi-View Consistency</h3>
-                            <p class="paper-authors"><span>Yao, X.</span>, Wu, H., et al.</p>
-                            <p class="paper-venue">IEEE International Conference on Computer Vision (ICCV) (2025)</p>
-                            <div>
-                                <span class="paper-badge">CCF A</span>
-                                <span class="paper-badge">计算机顶会</span>
-                                <span class="paper-badge">第一作者</span>
-                                <span class="paper-badge">Under Review</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="paper-card">
-                        <div class="paper-image">
-                            <img src="4.png" alt="Paper Image">
-                        </div>
-                        <div class="paper-content">
-                            <h3 class="paper-title">基于Stacking集成学习的恶意URL检测系统设计与实现</h3>
-                            <p class="paper-authors">张永刚, 吕鹏飞, 张悦, <span>姚兴博*</span>, & 冯艳丽</p>
-                            <p class="paper-venue">现代电子技术 (2023)</p>
-                            <div>
-                                <span class="paper-badge">中文科技核心</span>
-                                <span class="paper-badge">通讯作者</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="paper-card">
-                        <div class="paper-content" style="padding-left: 20px;">
-                            <h3 class="paper-title">软件著作：面向复杂温室环境的农业机器人定位、建图与路径规划系统V1.0</h3>
-                            <p class="paper-venue"> 2023年5月9日. 2024SR0327245</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 荣誉奖项部分 -->
-        <section id="awards" class="section awards-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">荣誉奖项</h2>
-                    <p class="section-subtitle">我的竞赛成就与学术荣誉</p>
                 </div>
                 
-                <div class="awards-container">
-                    <div class="award-card">
-                        <h3 class="award-title">香港科技大学硕士全额奖学金</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">24万</span>
-                            </div>
+                <div class="header-image">
+                    <img src="0.png" alt="姚兴博">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">XB</div>
+            <ul class="nav-links">
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#papers">论文</a></li>
+                <li><a href="#awards">荣誉奖项</a></li>
+                <li><a href="#experience">实习经历</a></li>
+                <li><a href="#projects">项目经历</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 技能部分 -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">技能</h2>
+                <p class="section-subtitle">我的专业技能和工具</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-tag skill-dl">
+                    <i class="fas fa-network-wired"></i> 深度学习
+                </div>
+                <div class="skill-tag skill-ml">
+                    <i class="fas fa-robot"></i> 机器学习
+                </div>
+                <div class="skill-tag skill-recsys">
+                    <i class="fas fa-thumbs-up"></i> 推荐系统
+                </div>
+                <div class="skill-tag skill-pytorch">
+                    <i class="fas fa-fire"></i> PyTorch
+                </div>
+                <div class="skill-tag skill-sklearn">
+                    <i class="fas fa-brain"></i> Scikit-learn
+                </div>
+                <div class="skill-tag skill-recall">
+                    <i class="fas fa-search"></i> 召回
+                </div>
+                <div class="skill-tag skill-ranking">
+                    <i class="fas fa-sort-amount-down"></i> 排序
+                </div>
+                <div class="skill-tag skill-feature">
+                    <i class="fas fa-cubes"></i> 特征工程
+                </div>
+                <div class="skill-tag skill-aigc">
+                    <i class="fas fa-magic"></i> AIGC
+                </div>
+                <div class="skill-tag skill-c">
+                    <i class="fas fa-code"></i> C
+                </div>
+                <div class="skill-tag skill-cpp">
+                    <i class="fas fa-code"></i> C++
+                </div>
+                <div class="skill-tag skill-java">
+                    <i class="fab fa-java"></i> Java
+                </div>
+                <div class="skill-tag skill-python">
+                    <i class="fab fa-python"></i> Python
+                </div>
+                <div class="skill-tag skill-anaconda">
+                    <i class="fas fa-snake"></i> Anaconda
+                </div>
+                <div class="skill-tag skill-linux">
+                    <i class="fab fa-linux"></i> Linux
+                </div>
+                <div class="skill-tag skill-shell">
+                    <i class="fas fa-terminal"></i> Shell
+                </div>
+                <div class="skill-tag skill-mysql">
+                    <i class="fas fa-database"></i> MySQL
+                </div>
+                <div class="skill-tag skill-ros">
+                    <i class="fas fa-robot"></i> ROS
+                </div>
+                <div class="skill-tag skill-latex">
+                    <i class="fas fa-square-root-alt"></i> LaTeX
+                </div>
+                <div class="skill-tag skill-english">
+                    <i class="fas fa-language"></i> 英语六级501
+                </div>
+                <div class="skill-tag skill-english">
+                    <i class="fas fa-language"></i> 英语四级609
+                </div>
+                <div class="skill-tag skill-english">
+                    <i class="fas fa-language"></i> 雅思6.5
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 论文部分 -->
+    <section id="papers" class="section papers-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">论文</h2>
+                <p class="section-subtitle">我的研究成果与学术贡献</p>
+            </div>
+            <div class="papers-container">
+                <div class="paper-card">
+                    <div class="paper-image">
+                        <img src="1.png" alt="Paper Image">
+                    </div>
+                    <div class="paper-content">
+                        <h3 class="paper-title">Autonomous navigation and adaptive path planning in dynamic greenhouse environments utilizing improved LeGO-LOAM and Open Planner algorithms</h3>
+                        <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Bai, Y., et al.</p>
+                        <p class="paper-venue">Journal of Field Robotics (2023)</p>
+                        <div>
+                            <span class="paper-badge">中科院一区TOP</span>
+                            <span class="paper-badge">SCI</span>
+                            <span class="paper-badge">IF=8.3</span>
+                            <span class="paper-badge">第一作者</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">国家奖学金</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">前0.2%</span>
-                            </div>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-image">
+                        <img src="2.png" alt="Paper Image">
+                    </div>
+                    <div class="paper-content">
+                        <h3 class="paper-title">Adaptive Navigation for Robots in Unstructured Agricultural Environments Using Stable Feature Localization and Multi-Sensor Obstacle Detection</h3>
+                        <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Cao, G., et al.</p>
+                        <p class="paper-venue">Computers and Electronics in Agriculture (2024)</p>
+                        <div>
+                            <span class="paper-badge">中科院一区TOP</span>
+                            <span class="paper-badge">SCI</span>
+                            <span class="paper-badge">IF=8.7</span>
+                            <span class="paper-badge">第一作者</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">国家励志奖学金</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">连续两年</span>
-                            </div>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-image">
+                        <img src="3.png" alt="Paper Image">
+                    </div>
+                    <div class="paper-content">
+                        <h3 class="paper-title">MagicCity: Geometry-Aware 3D City Generation from Satellite Imagery with Multi-View Consistency</h3>
+                        <p class="paper-authors"><span>Yao, X.</span>, Wu, H., et al.</p>
+                        <p class="paper-venue">IEEE International Conference on Computer Vision (ICCV) (2025)</p>
+                        <div>
+                            <span class="paper-badge">CCF A</span>
+                            <span class="paper-badge">计算机顶会</span>
+                            <span class="paper-badge">第一作者</span>
+                            <span class="paper-badge">Under Review</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">唐仲英德育奖学金</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2019-2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">连续四年</span>
-                            </div>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-image">
+                        <img src="4.png" alt="Paper Image">
+                    </div>
+                    <div class="paper-content">
+                        <h3 class="paper-title">基于Stacking集成学习的恶意URL检测系统设计与实现</h3>
+                        <p class="paper-authors">张永刚, 吕鹏飞, 张悦, <span>姚兴博*</span>, & 冯艳丽</p>
+                        <p class="paper-venue">现代电子技术 (2023)</p>
+                        <div>
+                            <span class="paper-badge">中文科技核心</span>
+                            <span class="paper-badge">通讯作者</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">三好学生一等奖</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2020-2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">连续三年</span>
-                            </div>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-content">
+                        <h3 class="paper-title">软件著作：面向复杂温室环境的农业机器人定位、建图与路径规划系统V1.0</h3>
+                        <p class="paper-venue">南京农业大学. 2023年5月9日. 2024SR0327245</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 荣誉奖项部分 -->
+    <section id="awards" class="section awards-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">荣誉奖项</h2>
+                <p class="section-subtitle">我的竞赛成就与学术荣誉</p>
+            </div>
+            
+            <div class="awards-container">
+                <div class="award-card">
+                    <h3 class="award-title">香港科技大学硕士全额奖学金</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">24万</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">校级优秀共青团干部</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">连续两年</span>
-                            </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">国家奖学金</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">前0.2%</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">2023中国大学生计算机设计大赛</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">全国二等奖</span>
-                            </div>
+                </div>
+                
+                <div class="award-card">
+                                    <h3 class="award-title">国家励志奖学金</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">连续两年</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">第十四届蓝桥杯大赛江苏赛区Java A组</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">二等奖</span>
-                            </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">唐仲英德育奖学金</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2019-2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">连续四年</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">国际大学生智能农业装备创新大赛</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">国际二等奖</span>
-                            </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">三好学生一等奖</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2020-2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">连续三年</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">第25届中国机器人及人工智能大赛</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">全国一等奖</span>
-                            </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">校级优秀共青团干部</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">连续两年</span>
                         </div>
                     </div>
-                    
-                    <div class="award-card">
-                        <h3 class="award-title">2022中国智能机器人格斗及竞技大赛</h3>
-                        <div class="award-footer">
-                            <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
-                            <div class="award-badges">
-                                <span class="award-badge">国家级</span>
-                                <span class="award-badge">全国一等奖</span>
-                            </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">2023中国大学生计算机设计大赛</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">全国二等奖</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">第十四届蓝桥杯大赛江苏赛区Java A组</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">二等奖</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">国际大学生智能农业装备创新大赛</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">国际二等奖</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">第25届中国机器人及人工智能大赛</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">全国一等奖</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="award-card">
+                    <h3 class="award-title">2022中国智能机器人格斗及竞技大赛</h3>
+                    <div class="award-footer">
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
+                        <div class="award-badges">
+                            <span class="award-badge">国家级</span>
+                            <span class="award-badge">全国一等奖</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- 实习经历部分 -->
-        <section id="experience" class="section experience-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">实习经历</h2>
-                    <p class="section-subtitle">我的职业实践与工作经验</p>
-                </div>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 class="timeline-title">机器学习算法岗</h3>
-                                <span class="timeline-date">2023.06 - 2023.09</span>
-                            </div>
-                            <p class="timeline-company">阿里巴巴 - 达摩院</p>
-                            <div class="timeline-desc">
-                                <ul>
-                                    <li>负责推荐系统中的多路召回算法设计与优化，提高了商品曝光率和用户点击率</li>
-                                    <li>设计并实现基于深度学习的特征工程模块，对用户行为数据进行挖掘和分析</li>
-                                    <li>优化排序模型，采用多目标优化策略，提升了推荐系统整体效果</li>
-                                    <li>参与推荐系统A/B测试方案设计与效果评估，制定了多维度评价指标</li>
-                                </ul>
-                            </div>
+        </div>
+    </section>
+    
+    <!-- 实习经历部分 -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">实习经历</h2>
+                <p class="section-subtitle">我的职业实践与工作经验</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">机器学习算法岗</h3>
+                            <span class="timeline-date">2023.06 - 2023.09</span>
+                        </div>
+                        <p class="timeline-company">阿里巴巴 - 达摩院</p>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>负责推荐系统中的多路召回算法设计与优化，提高了商品曝光率和用户点击率</li>
+                                <li>设计并实现基于深度学习的特征工程模块，对用户行为数据进行挖掘和分析</li>
+                                <li>优化排序模型，采用多目标优化策略，提升了推荐系统整体效果</li>
+                                <li>参与推荐系统A/B测试方案设计与效果评估，制定了多维度评价指标</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- 项目经历部分 -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">项目经历</h2>
-                    <p class="section-subtitle">我的研究项目与实践成果</p>
-                </div>
-                
-                <div class="projects-container">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="2-1.png" alt="Project Image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">MagicCity: 基于卫星图像的3D城市生成</h3>
-                            <p class="project-date"><i class="far fa-calendar-alt"></i> 2023.10 - 2025.03</p>
-                            <p class="project-desc">- 研发基于深度学习的生成模型，实现3D城市生成
+        </div>
+    </section>
+    
+    <!-- 项目经历部分 -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">项目经历</h2>
+                <p class="section-subtitle">我的研究项目与实践成果</p>
+            </div>
+            
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="2-1.png" alt="Project Image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MagicCity: 基于卫星图像的3D城市生成</h3>
+                        <p class="project-date"><i class="far fa-calendar-alt"></i> 2023.10 - 2025.03</p>
+                        <p class="project-desc">- 研发基于深度学习的生成模型，实现3D城市生成
 - 解决了传统生成模型在大场景任务中的纹理和几何失准问题
 - 设计了双模态编码器，融合CLIP语义特征与几何特征
 - 构建了城市级embedding空间，支持多样化控制生成
 - 提出了新的多视角一致性损失函数，保证生成结果的几何一致性</p>
-                            <div class="project-tags">
-                                <span class="project-tag">计算机视觉</span>
-                                <span class="project-tag">生成式模型</span>
-                                <span class="project-tag">3D重建</span>
-                            </div>
+                        <div class="project-tags">
+                            <span class="project-tag">计算机视觉</span>
+                            <span class="project-tag">生成式模型</span>
+                            <span class="project-tag">3D重建</span>
                         </div>
                     </div>
-                    
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="2-2.png" alt="Project Image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">新闻推荐场景下的用户行为预测</h3>
-                            <p class="project-date"><i class="far fa-calendar-alt"></i> 2024.10 - 2025.03</p>
-                            <p class="project-desc">- 设计基于多路召回、特征工程和排序的推荐系统
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="2-2.png" alt="Project Image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">新闻推荐场景下的用户行为预测</h3>
+                        <p class="project-date"><i class="far fa-calendar-alt"></i> 2024.10 - 2025.03</p>
+                        <p class="project-desc">- 设计基于多路召回、特征工程和排序的推荐系统
 - 根据用户的历史点击行为预测未来的点击趋势，并推荐相关内容
 - 在召回阶段，采用UserCF、ItemCF和YoutubeDNN等算法进行多路召回
 - 结合新闻embedding和相似性规则有效解决了冷启动问题
 - 实现了实时特征更新机制，提高了模型对新闻时效性的敏感度</p>
-                            <div class="project-tags">
-                                <span class="project-tag">推荐系统</span>
-                                <span class="project-tag">机器学习</span>
-                                <span class="project-tag">深度学习</span>
-                            </div>
+                        <div class="project-tags">
+                            <span class="project-tag">推荐系统</span>
+                            <span class="project-tag">机器学习</span>
+                            <span class="project-tag">深度学习</span>
                         </div>
                     </div>
-                    
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="2-3.png" alt="Project Image">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">基于Stacking集成学习的恶意URL检测系统</h3>
-                            <p class="project-date"><i class="far fa-calendar-alt"></i> 2022.07 - 2022.09</p>
-                            <p class="project-desc">- 设计并实现了一种基于Stacking集成学习与gcForest的恶意URL检测算法
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="2-3.png" alt="Project Image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">基于Stacking集成学习的恶意URL检测系统</h3>
+                        <p class="project-date"><i class="far fa-calendar-alt"></i> 2022.07 - 2022.09</p>
+                        <p class="project-desc">- 设计并实现了一种基于Stacking集成学习与gcForest的恶意URL检测算法
 - 通过多层模型融合提高检测准确率，达到95.7%的精度
 - 利用Flask和Redis技术实现模型的服务化封装与部署
 - 设计了特征提取模块，从URL中提取语义和结构特征
 - 相关成果被发表在中文核心期刊《现代电子技术》</p>
-                            <div class="project-tags">
-                                <span class="project-tag">网络安全</span>
-                                <span class="project-tag">机器学习</span>
-                                <span class="project-tag">集成学习</span>
-                            </div>
+                        <div class="project-tags">
+                            <span class="project-tag">网络安全</span>
+                            <span class="project-tag">机器学习</span>
+                            <span class="project-tag">集成学习</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- 页脚部分 -->
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2025 姚兴博. 保留所有权利。</p>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+    
+    <!-- 页脚部分 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 姚兴博. 保留所有权利。</p>
+        </div>
+    </footer>
     
     <script>
-        // 实现标题文字变化效果
+        // 实现打字效果
         const titles = [
             "人工智能研究者",
             "机器人导航专家", 
@@ -1049,21 +1064,45 @@
         ];
         
         let currentIndex = 0;
-        const changingText = document.getElementById('changing-text');
-        const staticText = document.getElementById('static-text');
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 1500;
         
-        function changeTitle() {
-            changingText.style.opacity = '0';
+        const changingText = document.getElementById('changing-text');
+        
+        function typeEffect() {
+            const currentTitle = titles[currentIndex];
             
-            setTimeout(() => {
+            if (isDeleting) {
+                // 删除文字
+                changingText.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = deletingSpeed;
+            } else {
+                // 添加文字
+                changingText.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+            
+            // 如果完成了当前单词的输入
+            if (!isDeleting && charIndex === currentTitle.length) {
+                // 暂停，然后开始删除
+                isDeleting = true;
+                typingSpeed = pauseTime;
+            } else if (isDeleting && charIndex === 0) {
+                // 完成删除，移动到下一个单词
+                isDeleting = false;
                 currentIndex = (currentIndex + 1) % titles.length;
-                changingText.textContent = titles[currentIndex];
-                changingText.style.opacity = '1';
-            }, 500);
+            }
+            
+            setTimeout(typeEffect, typingSpeed);
         }
         
-        // 每4秒切换一次标题
-        setInterval(changeTitle, 4000);
+        // 启动打字效果
+        window.addEventListener('load', typeEffect);
         
         // 平滑滚动效果
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
