@@ -507,6 +507,31 @@
             color: #666;
             font-size: 0.9rem;
         }
+        .internship-header {
+            margin-bottom: 10px;
+        }
+
+        .internship-duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+
+        .internship-details {
+            margin-top: 8px;
+            padding-left: 0;
+        }
+
+        .internship-supervisor, .internship-work {
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .internship-supervisor strong, .internship-work strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
         
         .internship-link {
             color: var(--primary-color);
@@ -842,20 +867,37 @@
     
     <!-- Internships Section -->
     <section id="internships" class="section internships-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Internships</h2>
-                <p class="section-subtitle">My internship experience</p>
+        <div class="internships-container">
+            <div class="internship-item">
+                <span class="internship-bullet">•</span>
+                <div class="internship-content">
+                    <div class="internship-header">
+                        <div class="internship-title">Research & Algorithm Intern</div>
+                        <div class="internship-company">
+                            <a href="#" class="internship-link">ManyCore Technology</a> - Institute of Advanced Technology
+                        </div>
+                        <div class="internship-duration">May 2025 - Sep 2025</div>
+                    </div>
+                    <div class="internship-details">
+                        <div class="internship-supervisor">
+                            <strong>Supervisor:</strong> <a href="https://zihan-z.github.io/" class="internship-link" target="_blank">Zihan ZHOU</a>
+                        </div>
+                        <div class="internship-work">
+                            <strong>Responsibilities:</strong> 参与10B CAD大模型构建，生成3D室内场景from text, image, video input
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="internships-container">
-                <div class="internship-item">
-                    <span class="internship-bullet">•</span>
-                    <div class="internship-content">
+            <div class="internship-item">
+                <span class="internship-bullet">•</span>
+                <div class="internship-content">
+                    <div class="internship-header">
                         <div class="internship-title">Machine Learning Algorithm Engineer</div>
                         <div class="internship-company">
-                            <a href="#" class="internship-link">Zhiwei Intelligence Technology Co., Ltd.</a> - Technical Department (Jun 2022 - Sep 2022)
+                            <a href="#" class="internship-link">Zhiwei Intelligence Technology Co., Ltd.</a> - Technical Department
                         </div>
+                        <div class="internship-duration">Jun 2022 - Sep 2022</div>
                     </div>
                 </div>
             </div>
