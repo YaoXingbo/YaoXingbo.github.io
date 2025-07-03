@@ -203,12 +203,12 @@
         
         /* Common Section Styles */
         .section {
-            padding: 60px 0;
+            padding: 45px 0;
         }
         
         .section-header {
             text-align: left;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .section-title {
@@ -328,22 +328,25 @@
         
         .paper-image {
             flex: 0 0 40%;
-            min-height: 180px;
+            min-height: 200px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         
         .paper-image img {
             width: 100%;
             height: auto;
             object-fit: cover;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border-radius: 6px;
         }
         
         .paper-content {
             flex: 1;
-            padding: 20px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
         }
@@ -370,6 +373,13 @@
             margin-bottom: 12px;
             color: #666;
             font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .paper-keywords {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
         }
         
         .paper-badge {
@@ -389,56 +399,69 @@
         }
         
         .awards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        
-        .award-card {
+            max-height: 350px;
+            overflow-y: auto;
+            padding: 20px;
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 18px;
             box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
         }
         
-        .award-card:hover {
-            transform: translateY(-3px);
+        .award-item {
+            margin-bottom: 18px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .award-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .award-main {
+            flex: 1;
         }
         
         .award-title {
             font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: var(--text-color);
         }
         
-        .award-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
+        .award-level {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 500;
         }
         
         .award-date {
             font-size: 0.85rem;
             color: #666;
+            font-weight: 500;
+            white-space: nowrap;
+            margin-left: 15px;
         }
         
-        .award-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
+        .awards-container::-webkit-scrollbar {
+            width: 8px;
         }
         
-        .award-badge {
-            display: inline-block;
-            padding: 3px 6px;
-            background-color: var(--primary-color);
-            color: #fff;
-            border-radius: 3px;
-            font-size: 0.75rem;
+        .awards-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .awards-container::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        
+        .awards-container::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
         }
         
         /* Internships Section Styles */
@@ -637,7 +660,7 @@
                 <div class="news-item">
                     <div class="news-date">2024.1.15</div>
                     <div class="news-content">
-                        Received <span class="news-highlight">HKUST-GZ Full Scholarship</span> for Master's Program! 💰
+                        Received <span class="news-highlight">HKUST Full Scholarship</span> for Master's Program! 💰
                     </div>
                 </div>
                 <div class="news-item">
@@ -666,12 +689,19 @@
                         <h3 class="paper-title">Autonomous navigation and adaptive path planning in dynamic greenhouse environments utilizing improved LeGO-LOAM and Open Planner algorithms</h3>
                         <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Bai, Y., et al.</p>
                         <p class="paper-venue">Journal of Field Robotics (2024)</p>
-                        <div>
-                            <span class="paper-badge">JCR Q1</span>
-                            <span class="paper-badge">SCI</span>
-                            <span class="paper-badge">IF=8.3</span>
-                            <span class="paper-badge">First Author</span>
-                        </div>
+                        <p class="paper-keywords">Keywords: Agricultural robotics, SLAM, Path planning, LeGO-LOAM</p>
+                    </div>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-image">
+                        <img src="2.png" alt="Paper Image">
+                    </div>
+                    <div class="paper-content">
+                        <h3 class="paper-title">Adaptive Navigation for Robots in Unstructured Agricultural Environments Using Stable Feature Localization and Multi-Sensor Obstacle Detection</h3>
+                        <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Cao, G., et al.</p>
+                        <p class="paper-venue">Computers and Electronics in Agriculture (2025)</p>
+                        <p class="paper-keywords">Keywords: Agricultural robotics, Feature localization, Obstacle detection, Multi-sensor fusion</p>
                     </div>
                 </div>
                 
@@ -683,29 +713,7 @@
                         <h3 class="paper-title">MagicCity: Geometry-Aware 3D City Generation from Satellite Imagery with Multi-View Consistency</h3>
                         <p class="paper-authors"><span>Yao, X.</span>, Wu, H., et al.</p>
                         <p class="paper-venue">IEEE International Conference on Computer Vision (ICCV) (2025)</p>
-                        <div>
-                            <span class="paper-badge">CCF A</span>
-                            <span class="paper-badge">Top-tier Conference</span>
-                            <span class="paper-badge">First Author</span>
-                            <span class="paper-badge">Under Review</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-card">
-                    <div class="paper-image">
-                        <img src="2.png" alt="Paper Image">
-                    </div>
-                    <div class="paper-content">
-                        <h3 class="paper-title">Adaptive Navigation for Robots in Unstructured Agricultural Environments Using Stable Feature Localization and Multi-Sensor Obstacle Detection</h3>
-                        <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Cao, G., et al.</p>
-                        <p class="paper-venue">Computers and Electronics in Agriculture (2025)</p>
-                        <div>
-                            <span class="paper-badge">JCR Q1</span>
-                            <span class="paper-badge">SCI</span>
-                            <span class="paper-badge">IF=8.7</span>
-                            <span class="paper-badge">First Author</span>
-                        </div>
+                        <p class="paper-keywords">Keywords: 3D generation, Computer vision, Multi-view consistency, AIGC</p>
                     </div>
                 </div>
                 
@@ -717,9 +725,7 @@
                         <h3 class="paper-title">Row detection BASED navigation and guidance for agricultural robots and autonomous vehicles in row-crop fields: Methods and applications</h3>
                         <p class="paper-authors">Shi, J., Bai, Y., Zhi, D.,Zhou, J., <span>Yao, X.*</span>, & Zhang, B.</p>
                         <p class="paper-venue">Agronomy (2023)</p>
-                        <div>
-                            <span class="paper-badge">JCR Q1</span>
-                        </div>
+                        <p class="paper-keywords">Keywords: Row detection, Agricultural robots, Navigation, Computer vision</p>
                     </div>
                 </div>
                 
@@ -742,121 +748,92 @@
             </div>
             
             <div class="awards-container">
-                <div class="award-card">
-                    <h3 class="award-title">HKUST Full Scholarship for Master's Program</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2024</p>
-                        <div class="award-badges">
-                            <span class="award-badge">CNY 240,000</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">HKUST Full Scholarship for Master's Program</h3>
+                        <p class="award-level">CNY 240,000</p>
                     </div>
+                    <p class="award-date">2024</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">National Scholarship</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023</p>
-                        <div class="award-badges">
-                            <span class="award-badge">National Level</span>
-                            <span class="award-badge">Top 0.2%</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">National Scholarship</h3>
+                        <p class="award-level">National Level • Top 0.2%</p>
                     </div>
+                    <p class="award-date">2023</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">Outstanding Student First Prize</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2020-2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">3 Consecutive Years</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">Outstanding Student First Prize</h3>
+                        <p class="award-level">University Level • 3 Consecutive Years</p>
                     </div>
+                    <p class="award-date">2020-2022</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">Tang Zhongying Moral Education Scholarship</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2019-2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">4 Consecutive Years</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">Tang Zhongying Moral Education Scholarship</h3>
+                        <p class="award-level">University Level • 4 Consecutive Years</p>
                     </div>
+                    <p class="award-date">2019-2022</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">National Inspirational Scholarship</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">National Level</span>
-                            <span class="award-badge">2 Consecutive Years</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">National Inspirational Scholarship</h3>
+                        <p class="award-level">National Level • 2 Consecutive Years</p>
                     </div>
+                    <p class="award-date">2021-2022</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">Outstanding Youth League Cadre</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">2 Consecutive Years</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">Outstanding Youth League Cadre</h3>
+                        <p class="award-level">University Level • 2 Consecutive Years</p>
                     </div>
+                    <p class="award-date">2021-2022</p>
                 </div>
 
-                <div class="award-card">
-                    <h3 class="award-title">25th China Robot and AI Competition</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">National Level</span>
-                            <span class="award-badge">First Prize</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">25th China Robot and AI Competition</h3>
+                        <p class="award-level">National Level • First Prize</p>
                     </div>
+                    <p class="award-date">2022</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">2022 China Intelligent Robot Combat and Competition</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">National Level</span>
-                            <span class="award-badge">First Prize</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">2022 China Intelligent Robot Combat and Competition</h3>
+                        <p class="award-level">National Level • First Prize</p>
                     </div>
+                    <p class="award-date">2022</p>
                 </div>
 
-                <div class="award-card">
-                    <h3 class="award-title">International University Intelligent Agricultural Equipment Innovation Competition</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022</p>
-                        <div class="award-badges">
-                            <span class="award-badge">International Level</span>
-                            <span class="award-badge">Second Prize</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">International University Intelligent Agricultural Equipment Innovation Competition</h3>
+                        <p class="award-level">International Level • Second Prize</p>
                     </div>
+                    <p class="award-date">2022</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">2023 China University Computer Design Competition</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023</p>
-                        <div class="award-badges">
-                            <span class="award-badge">National Level</span>
-                            <span class="award-badge">Second Prize</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">2023 China University Computer Design Competition</h3>
+                        <p class="award-level">National Level • Second Prize</p>
                     </div>
+                    <p class="award-date">2023</p>
                 </div>
                 
-                <div class="award-card">
-                    <h3 class="award-title">14th Blue Bridge Cup Competition Jiangsu Division Java Group A</h3>
-                    <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023</p>
-                        <div class="award-badges">
-                            <span class="award-badge">Provincial Level</span>
-                            <span class="award-badge">Second Prize</span>
-                        </div>
+                <div class="award-item">
+                    <div class="award-main">
+                        <h3 class="award-title">14th Blue Bridge Cup Competition Jiangsu Division Java Group A</h3>
+                        <p class="award-level">Provincial Level • Second Prize</p>
                     </div>
+                    <p class="award-date">2023</p>
                 </div>
                 
             </div>
