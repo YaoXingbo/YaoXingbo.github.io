@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姚兴博 - 个人主页</title>
+    <title>Xingbo Yao - Personal Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* 全局样式 */
+        /* Global Styles */
         :root {
             --primary-color: #3498db;
             --secondary-color: #2ecc71;
@@ -15,7 +15,7 @@
             --card-bg: #fff;
             --border-radius: 8px;
             --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --paper-badge-color: #6c5ce7; /* 更改为紫色 */
+            --paper-badge-color: #6c5ce7; /* Purple color */
         }
         
         * {
@@ -32,16 +32,16 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
         
-        /* 头部样式 */
+        /* Header Styles */
         .header {
             background: linear-gradient(135deg, #3498db, #2ecc71);
             color: #fff;
-            padding: 100px 0 70px;
+            padding: 80px 0 60px;
             position: relative;
             overflow: hidden;
         }
@@ -60,8 +60,8 @@
         }
         
         .header-image {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
             border: 5px solid rgba(255,255,255,0.3);
@@ -75,7 +75,7 @@
         }
         
         .name {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
             display: flex;
@@ -83,12 +83,12 @@
         }
         
         .name .greeting {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-right: 10px;
         }
         
         .title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 400;
             margin-bottom: 20px;
         }
@@ -99,7 +99,7 @@
         
         #changing-text {
             font-weight: 500;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             position: relative;
             display: inline-block;
         }
@@ -117,33 +117,33 @@
         }
         
         .header-info {
-            margin-top: 30px;
+            margin-top: 25px;
         }
         
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #fff;
         }
         
         .info-item i {
             margin-right: 10px;
-            width: 20px;
+            width: 18px;
             text-align: center;
         }
         
         .social-links {
             display: flex;
-            margin-top: 20px;
+            margin-top: 18px;
         }
         
         .social-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.2);
             color: #fff;
@@ -157,7 +157,7 @@
             transform: translateY(-3px);
         }
         
-        /* 导航样式 */
+        /* Navigation Styles */
         .navbar {
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -170,11 +170,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 12px 0;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-color);
         }
@@ -182,16 +182,18 @@
         .nav-links {
             display: flex;
             list-style: none;
+            align-items: flex-start;
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
         
@@ -199,21 +201,21 @@
             color: var(--primary-color);
         }
         
-        /* 通用部分样式 */
+        /* Common Section Styles */
         .section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .section-header {
-            text-align: center;
-            margin-bottom: 50px;
+            text-align: left;
+            margin-bottom: 40px;
         }
         
         .section-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             position: relative;
             display: inline-block;
         }
@@ -221,68 +223,89 @@
         .section-title:after {
             content: '';
             position: absolute;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background-color: var(--secondary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: -8px;
+            left: 0;
         }
         
         .section-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 600px;
         }
         
-        /* 技能部分样式 */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+        /* News Section Styles */
+        .news-section {
+            background-color: #fff;
         }
         
-        .skill-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 16px;
+        .news-container {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .news-date {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .news-content {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .news-highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .news-venue {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .news-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .news-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
             border-radius: 4px;
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        .skill-tag i {
-            margin-right: 8px;
+        .news-container::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
         }
         
-        .skill-dl { background-color: #4B0082; }
-        .skill-ml { background-color: #008080; }
-        .skill-recsys { background-color: #FF6347; }
-        .skill-pytorch { background-color: #EE4C2C; }
-        .skill-sklearn { background-color: #F7931E; }
-        .skill-recall { background-color: #FF6B6B; }
-        .skill-ranking { background-color: #6B66FF; }
-        .skill-feature { background-color: #66CDAA; }
-        .skill-aigc { background-color: #9932CC; }
-        .skill-c { background-color: #A8B9CC; }
-        .skill-cpp { background-color: #00599C; }
-        .skill-java { background-color: #E76F00; }
-        .skill-python { background-color: #3776AB; }
-        .skill-anaconda { background-color: #44A833; }
-        .skill-linux { background-color: #FCC624; color: #333; }
-        .skill-shell { background-color: #4EAA25; }
-        .skill-mysql { background-color: #4479A1; }
-        .skill-ros { background-color: #22314E; }
-        .skill-latex { background-color: #008080; }
-        .skill-english { background-color: #3498db; }
+        .news-container::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
         
-        /* 论文部分样式 */
+        /* Papers Section Styles */
+        .papers-section {
+            background-color: #f5f9fc;
+        }
+        
         .papers-container {
             display: flex;
             flex-direction: column;
@@ -299,37 +322,43 @@
         }
         
         .paper-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
         
         .paper-image {
-            flex: 0 0 200px;
-            height: 200px;
+            flex: 0 0 40%;
+            min-height: 180px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .paper-image img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
         }
         
         .paper-content {
             flex: 1;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
         }
         
         .paper-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--primary-color);
+            line-height: 1.4;
         }
         
         .paper-authors {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
         }
         
         .paper-authors span {
@@ -338,47 +367,48 @@
         
         .paper-venue {
             font-style: italic;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #666;
+            font-size: 0.9rem;
         }
         
         .paper-badge {
             display: inline-block;
-            padding: 4px 8px;
+            padding: 3px 8px;
             background-color: var(--paper-badge-color);
             color: white;
             border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 8px;
-            margin-bottom: 5px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            margin-bottom: 4px;
         }
         
-        /* 荣誉奖项样式 */
+        /* Awards Section Styles */
         .awards-section {
-            background-color: #f5f9fc;
+            background-color: #fff;
         }
         
         .awards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
         
         .award-card {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 20px;
+            padding: 18px;
             box-shadow: var(--box-shadow);
             transition: transform 0.3s ease;
         }
         
         .award-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         
         .award-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--text-color);
@@ -392,178 +422,98 @@
         }
         
         .award-date {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
         }
         
         .award-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 4px;
         }
         
         .award-badge {
             display: inline-block;
-            padding: 4px 8px;
+            padding: 3px 6px;
             background-color: var(--primary-color);
             color: #fff;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
         }
         
-        /* 实习经历样式 */
-        .experience-section {
-            background-color: #fff;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline-item {
-            padding: 20px 30px;
-            position: relative;
-            background-color: inherit;
-            width: 100%;
-        }
-        
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: var(--card-bg);
-            position: relative;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .timeline-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        .timeline-date {
-            padding: 5px 15px;
-            background-color: var(--primary-color);
-            color: #fff;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .timeline-company {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-            color: #555;
-        }
-        
-        .timeline-desc ul {
-            padding-left: 20px;
-        }
-        
-        .timeline-desc li {
-            margin-bottom: 8px;
-        }
-        
-        /* 项目经历样式 */
-        .projects-section {
+        /* Internships Section Styles */
+        .internships-section {
             background-color: #f5f9fc;
         }
         
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
+        .internships-container {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
-            overflow: hidden;
+            padding: 25px;
             box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .project-date {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .project-desc {
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            white-space: pre-line;
-        }
-        
-        .project-tags {
+        .internship-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
         
-        .project-tag {
-            padding: 5px 10px;
-            background-color: var(--paper-badge-color);
-            color: white;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .internship-item:last-child {
+            margin-bottom: 0;
         }
         
-        /* 页脚样式 */
+        .internship-bullet {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .internship-content {
+            flex: 1;
+        }
+        
+        .internship-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 3px;
+        }
+        
+        .internship-company {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .internship-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .internship-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer Styles */
         .footer {
             background-color: #2c3e50;
             color: #ecf0f1;
-            padding: 30px 0;
+            padding: 25px 0;
             text-align: center;
         }
         
         .footer p {
-            margin: 10px 0;
+            margin: 8px 0;
+            font-size: 0.9rem;
         }
         
-        /* 响应式设计 */
+        /* Responsive Design */
         @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
             .header-content {
                 flex-direction: column;
                 text-align: center;
@@ -571,7 +521,7 @@
             
             .header-text {
                 padding-right: 0;
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
             
             .header-info {
@@ -587,27 +537,31 @@
             }
             
             .paper-image {
-                flex: 0 0 150px;
+                flex: 0 0 120px;
             }
             
-            .projects-container {
-                grid-template-columns: 1fr;
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links li {
+                margin-left: 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 头部部分 -->
+    <!-- Header Section -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="header-text">
-                    <h1 class="name"><span class="greeting">Hi 👋 我是 </span> 姚兴博</h1>
-                    <p class="title"><span id="static-text">我是</span> <span id="changing-text"></span></p>
-                    <p>我是来自香港科技大学 人工智能专业 的硕士研究生（2024.9-2026.7）。师从<a href="https://www.hkust-gz.edu.cn/zh/people/hui-xiong/" style="color: white; text-decoration: underline;">熊辉</a></p>
+                    <h1 class="name"><span class="greeting">Hi 👋 I'm </span> Xingbo Yao</h1>
+                    <p class="title"><span id="static-text">I'm a</span> <span id="changing-text"></span></p>
+                    <p>I'm a Master's student in Artificial Intelligence at The Hong Kong University of Science and Technology (2024.9-2026.7). Advised by <a href="https://www.hkust-gz.edu.cn/zh/people/hui-xiong/" style="color: white; text-decoration: underline;">Prof. Hui Xiong</a></p>
                     
                     <div class="header-info">
-                        
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             <span>xingboyao163@163.com</span>
@@ -622,7 +576,7 @@
                         </div>
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>广东省</span>
+                            <span>Guangdong Province, China</span>
                         </div>
                     </div>
                     
@@ -635,110 +589,73 @@
                 </div>
                 
                 <div class="header-image">
-                    <img src="0.png" alt="姚兴博">
+                    <img src="0.png" alt="Xingbo Yao">
                 </div>
             </div>
         </div>
     </header>
     
-    <!-- 导航栏 -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">XB</div>
             <ul class="nav-links">
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#papers">论文</a></li>
-                <li><a href="#awards">荣誉奖项</a></li>
-                <li><a href="#experience">实习经历</a></li>
-                <li><a href="#projects">项目经历</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#papers">Publications</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#internships">Internships</a></li>
             </ul>
         </div>
     </nav>
     
-    <!-- 技能部分 -->
-    <section id="skills" class="section skills-section">
+    <!-- News Section -->
+    <section id="news" class="section news-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">技能</h2>
-                <p class="section-subtitle">我的专业技能和工具</p>
+                <h2 class="section-title">News</h2>
+                <p class="section-subtitle">Latest updates and announcements</p>
             </div>
-            <div class="skills-container">
-                <div class="skill-tag skill-dl">
-                    <i class="fas fa-network-wired"></i> 深度学习
+            <div class="news-container">
+                <div class="news-item">
+                    <div class="news-date">2025.6.27</div>
+                    <div class="news-content">
+                        One paper is accepted by <span class="news-venue">ICCV 2025</span>! 🎉
+                    </div>
                 </div>
-                <div class="skill-tag skill-ml">
-                    <i class="fas fa-robot"></i> 机器学习
+                <div class="news-item">
+                    <div class="news-date">2024.9.1</div>
+                    <div class="news-content">
+                        I started my <span class="news-highlight">MPhil</span> journey at <span class="news-highlight">HKUST-GZ</span> under <span class="news-highlight">Prof. Hui Xiong</span>! 🎓
+                    </div>
                 </div>
-                <div class="skill-tag skill-recsys">
-                    <i class="fas fa-thumbs-up"></i> 推荐系统
+                <div class="news-item">
+                    <div class="news-date">2024.3.13</div>
+                    <div class="news-content">
+                        One paper is accepted by <span class="news-venue">Journal of Field Robotics</span>! 🤖
+                    </div>
                 </div>
-                <div class="skill-tag skill-pytorch">
-                    <i class="fas fa-fire"></i> PyTorch
+                <div class="news-item">
+                    <div class="news-date">2024.1.15</div>
+                    <div class="news-content">
+                        Received <span class="news-highlight">HKUST Full Scholarship</span> for Master's Program! 💰
+                    </div>
                 </div>
-                <div class="skill-tag skill-sklearn">
-                    <i class="fas fa-brain"></i> Scikit-learn
-                </div>
-                <div class="skill-tag skill-recall">
-                    <i class="fas fa-search"></i> 召回
-                </div>
-                <div class="skill-tag skill-ranking">
-                    <i class="fas fa-sort-amount-down"></i> 排序
-                </div>
-                <div class="skill-tag skill-feature">
-                    <i class="fas fa-cubes"></i> 特征工程
-                </div>
-                <div class="skill-tag skill-aigc">
-                    <i class="fas fa-magic"></i> AIGC
-                </div>
-                <div class="skill-tag skill-c">
-                    <i class="fas fa-code"></i> C
-                </div>
-                <div class="skill-tag skill-cpp">
-                    <i class="fas fa-code"></i> C++
-                </div>
-                <div class="skill-tag skill-java">
-                    <i class="fab fa-java"></i> Java
-                </div>
-                <div class="skill-tag skill-python">
-                    <i class="fab fa-python"></i> Python
-                </div>
-                <div class="skill-tag skill-anaconda">
-                    <i class="fas fa-snake"></i> Anaconda
-                </div>
-                <div class="skill-tag skill-linux">
-                    <i class="fab fa-linux"></i> Linux
-                </div>
-                <div class="skill-tag skill-shell">
-                    <i class="fas fa-terminal"></i> Shell
-                </div>
-                <div class="skill-tag skill-mysql">
-                    <i class="fas fa-database"></i> MySQL
-                </div>
-                <div class="skill-tag skill-ros">
-                    <i class="fas fa-robot"></i> ROS
-                </div>
-                <div class="skill-tag skill-latex">
-                    <i class="fas fa-square-root-alt"></i> LaTeX
-                </div>
-                <div class="skill-tag skill-english">
-                    <i class="fas fa-language"></i> 英语六级501
-                </div>
-                <div class="skill-tag skill-english">
-                    <i class="fas fa-language"></i> 英语四级609
-                </div>
-                <div class="skill-tag skill-english">
-                    <i class="fas fa-language"></i> 雅思6.5
+                <div class="news-item">
+                    <div class="news-date">2023.12.1</div>
+                    <div class="news-content">
+                        Awarded <span class="news-highlight">National Scholarship</span> - Top 0.2% nationwide! 🏆
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- 论文部分 -->
+    <!-- Publications Section -->
     <section id="papers" class="section papers-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">论文</h2>
-                <p class="section-subtitle">我的研究成果与学术贡献</p>
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">My research contributions and academic work</p>
             </div>
             <div class="papers-container">
                 <div class="paper-card">
@@ -750,10 +667,10 @@
                         <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Bai, Y., et al.</p>
                         <p class="paper-venue">Journal of Field Robotics (2024)</p>
                         <div>
-                            <span class="paper-badge">中科院一区TOP</span>
+                            <span class="paper-badge">JCR Q1</span>
                             <span class="paper-badge">SCI</span>
                             <span class="paper-badge">IF=8.3</span>
-                            <span class="paper-badge">第一作者</span>
+                            <span class="paper-badge">First Author</span>
                         </div>
                     </div>
                 </div>
@@ -767,10 +684,10 @@
                         <p class="paper-authors"><span>Yao, X.</span>, Zhang, B., Cao, G., et al.</p>
                         <p class="paper-venue">Computers and Electronics in Agriculture (2025)</p>
                         <div>
-                            <span class="paper-badge">中科院一区TOP</span>
+                            <span class="paper-badge">JCR Q1</span>
                             <span class="paper-badge">SCI</span>
                             <span class="paper-badge">IF=8.7</span>
-                            <span class="paper-badge">第一作者</span>
+                            <span class="paper-badge">First Author</span>
                         </div>
                     </div>
                 </div>
@@ -785,8 +702,8 @@
                         <p class="paper-venue">IEEE International Conference on Computer Vision (ICCV) (2025)</p>
                         <div>
                             <span class="paper-badge">CCF A</span>
-                            <span class="paper-badge">计算机顶会</span>
-                            <span class="paper-badge">第一作者</span>
+                            <span class="paper-badge">Top-tier Conference</span>
+                            <span class="paper-badge">First Author</span>
                             <span class="paper-badge">Under Review</span>
                         </div>
                     </div>
@@ -794,151 +711,150 @@
                 
                 <div class="paper-card">
                     <div class="paper-image">
-                        <img src="4.png" alt="Paper Image">
+                        <img src="4.jpg" alt="Paper Image">
                     </div>
                     <div class="paper-content">
-                        <h3 class="paper-title">基于Stacking集成学习的恶意URL检测系统设计与实现</h3>
-                        <p class="paper-authors">张永刚, 吕鹏飞, 张悦, <span>姚兴博*</span>, & 冯艳丽</p>
-                        <p class="paper-venue">现代电子技术 (2023)</p>
+                        <h3 class="paper-title">Row detection BASED navigation and guidance for agricultural robots and autonomous vehicles in row-crop fields: Methods and applications</h3>
+                        <p class="paper-authors">Shi, J., Bai, Y., Zhi, D.,Zhou, J., <span>Yao, X.*</span>, & Zhang, B.</p>
+                        <p class="paper-venue">Agronomy (2023)</p>
                         <div>
-                            <span class="paper-badge">中文科技核心</span>
-                            <span class="paper-badge">通讯作者</span>
+                            <span class="paper-badge">JCR Q1</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="paper-card">
                     <div class="paper-content">
-                        <h3 class="paper-title">软件著作：面向复杂温室环境的农业机器人定位、建图与路径规划系统V1.0</h3>
-                        <p class="paper-venue"> 2023年5月9日. 2024SR0327245</p>
+                        <h3 class="paper-title">Software Copyright: Agricultural Robot Localization, Mapping and Path Planning System for Complex Greenhouse Environments V1.0</h3>
+                        <p class="paper-venue">May 9, 2023. 2024SR0327245</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- 荣誉奖项部分 -->
+    <!-- Awards Section -->
     <section id="awards" class="section awards-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">荣誉奖项</h2>
-                <p class="section-subtitle">我的竞赛成就与学术荣誉</p>
+                <h2 class="section-title">Awards</h2>
+                <p class="section-subtitle">My achievements and academic honors</p>
             </div>
             
             <div class="awards-container">
                 <div class="award-card">
-                    <h3 class="award-title">香港科技大学 硕士全额奖学金</h3>
+                    <h3 class="award-title">HKUST Full Scholarship for Master's Program</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2024年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2024</p>
                         <div class="award-badges">
-                            <span class="award-badge">人民币24万元</span>
+                            <span class="award-badge">CNY 240,000</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">国家奖学金</h3>
+                    <h3 class="award-title">National Scholarship</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023</p>
                         <div class="award-badges">
-                            <span class="award-badge">国家级</span>
-                            <span class="award-badge">前0.2%</span>
+                            <span class="award-badge">National Level</span>
+                            <span class="award-badge">Top 0.2%</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">三好学生一等奖</h3>
+                    <h3 class="award-title">Outstanding Student First Prize</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2020-2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2020-2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">连续三年</span>
+                            <span class="award-badge">3 Consecutive Years</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">唐仲英德育奖学金</h3>
+                    <h3 class="award-title">Tang Zhongying Moral Education Scholarship</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2019-2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2019-2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">连续四年</span>
+                            <span class="award-badge">4 Consecutive Years</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">国家励志奖学金</h3>
+                    <h3 class="award-title">National Inspirational Scholarship</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">国家级</span>
-                            <span class="award-badge">连续两年</span>
+                            <span class="award-badge">National Level</span>
+                            <span class="award-badge">2 Consecutive Years</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">校级优秀共青团干部</h3>
+                    <h3 class="award-title">Outstanding Youth League Cadre</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2021-2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">连续两年</span>
+                            <span class="award-badge">2 Consecutive Years</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="award-card">
-                    <h3 class="award-title">第25届中国机器人及人工智能大赛</h3>
+                    <h3 class="award-title">25th China Robot and AI Competition</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">国家级</span>
-                            <span class="award-badge">全国一等奖</span>
+                            <span class="award-badge">National Level</span>
+                            <span class="award-badge">First Prize</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">2022中国智能机器人格斗及竞技大赛</h3>
+                    <h3 class="award-title">2022 China Intelligent Robot Combat and Competition</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">国家级</span>
-                            <span class="award-badge">全国一等奖</span>
+                            <span class="award-badge">National Level</span>
+                            <span class="award-badge">First Prize</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="award-card">
-                    <h3 class="award-title">国际大学生智能农业装备创新大赛</h3>
+                    <h3 class="award-title">International University Intelligent Agricultural Equipment Innovation Competition</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2022</p>
                         <div class="award-badges">
-                            <span class="award-badge">国际级</span>
-                            <span class="award-badge">国际二等奖</span>
+                            <span class="award-badge">International Level</span>
+                            <span class="award-badge">Second Prize</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">2023中国大学生计算机设计大赛</h3>
+                    <h3 class="award-title">2023 China University Computer Design Competition</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023</p>
                         <div class="award-badges">
-                            <span class="award-badge">国家级</span>
-                            <span class="award-badge">全国二等奖</span>
+                            <span class="award-badge">National Level</span>
+                            <span class="award-badge">Second Prize</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <h3 class="award-title">第十四届蓝桥杯大赛江苏赛区Java A组</h3>
+                    <h3 class="award-title">14th Blue Bridge Cup Competition Jiangsu Division Java Group A</h3>
                     <div class="award-footer">
-                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023年</p>
+                        <p class="award-date"><i class="far fa-calendar-alt"></i> 2023</p>
                         <div class="award-badges">
-                            <span class="award-badge">省级</span>
-                            <span class="award-badge">二等奖</span>
+                            <span class="award-badge">Provincial Level</span>
+                            <span class="award-badge">Second Prize</span>
                         </div>
                     </div>
                 </div>
@@ -947,29 +863,21 @@
         </div>
     </section>
     
-    <!-- 实习经历部分 -->
-    <section id="experience" class="section experience-section">
+    <!-- Internships Section -->
+    <section id="internships" class="section internships-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">实习经历</h2>
-                <p class="section-subtitle">我的职业实践与工作经验</p>
+                <h2 class="section-title">Internships</h2>
+                <p class="section-subtitle">My professional experience and work history</p>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">机器学习算法岗</h3>
-                            <span class="timeline-date">2022.06 - 2022.09</span>
-                        </div>
-                        <p class="timeline-company">智位智能科技有限公司 - 技术部</p>
-                        <div class="timeline-desc">
-                            <ul>
-                                <li>基于机器学习算法开发恶意URL检测系统:</li>
-                                <li>负责收集和处理400万条URL数据制作数据集,通过设计正则表达式进行数据清洗，并实施向量化特征工程，解决协议干扰和文本稀疏性问题。</li>
-                                <li>设计并实现了一种基于Stacking集成学习（包括随机森林、支持向量机、朴素贝叶斯到逻辑回归）与gcForest的恶意URL检测算法，最终实现了98.75%的高准确率。</li>
-                                <li>利用Flask和Redis技术实现模型的服务化封装与部署，相关成果被发表在中文核心期刊。</li>
-                            </ul>
+            <div class="internships-container">
+                <div class="internship-item">
+                    <span class="internship-bullet">•</span>
+                    <div class="internship-content">
+                        <div class="internship-title">Machine Learning Algorithm Engineer</div>
+                        <div class="internship-company">
+                            <a href="#" class="internship-link">Zhiwei Intelligence Technology Co., Ltd.</a> - Technical Department (Jun 2022 - Sep 2022)
                         </div>
                     </div>
                 </div>
@@ -977,91 +885,20 @@
         </div>
     </section>
     
-    <!-- 项目经历部分 -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">项目经历</h2>
-                <p class="section-subtitle">我的研究项目与实践成果</p>
-            </div>
-            
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="2-1.png" alt="Project Image">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">基于生成式模型的3D城市生成</h3>
-                        <p class="project-date"><i class="far fa-calendar-alt"></i> 2024.03 - 2025.03</p>
-                        <p class="project-desc">- 研发基于深度学习的生成模型，实现3D城市生成，解决了传统生成模型在大场景任务中的纹理和几何失准问题
-- 设计了双模态编码器，融合CLIP语义特征与几何特征，构建了城市级embedding空间
-- 提出了多分支交叉注意力机制，实现了60帧多视角同步生成，最终合成的高质量3D城市在几何误差和纹理质量方面较基准方法提升了5%以上。
-- 该项目成果以第一作者身份撰写论文，并投递至计算机领域顶级会议ICCV </p>
-                        <div class="project-tags">
-                            <span class="project-tag">计算机视觉</span>
-                            <span class="project-tag">生成式模型</span>
-                            <span class="project-tag">Attention</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="2-2.png" alt="Project Image">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">新闻推荐场景下的用户行为预测</h3>
-                        <p class="project-date"><i class="far fa-calendar-alt"></i> 2024.10 - 2025.03</p>
-                        <p class="project-desc">- 设计基于多路召回、特征工程和排序的推荐系统，根据用户的历史点击行为预测未来的点击趋势，并推荐相关内容
-- 在召回阶段，采用UserCF、ItemCF和YoutubeDNN等算法进行多路召回，结合新闻embedding和相似性规则有效解决了冷启动问题
-- 特征工程阶段构建用户行为、新闻内容、时间衰减等多特征
-- 在排序阶段，使用Wide&Deep、DeepFM和DIN进行模型融合，优化推荐结果，最终AUC达到了0.8</p>
-                        <div class="project-tags">
-                            <span class="project-tag">推荐系统</span>
-                            <span class="project-tag">召回</span>
-                            <span class="project-tag">特征工程</span>
-                            <span class="project-tag">排序</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="2-3.png" alt="Project Image">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">基于Stacking集成学习的恶意URL检测系统</h3>
-                        <p class="project-date"><i class="far fa-calendar-alt"></i> 2022.07 - 2022.09</p>
-                        <p class="project-desc">- 设计并实现了一种基于Stacking集成学习与gcForest的恶意URL检测算法
-- 通过多层模型融合提高检测准确率，达到98.7%的精度
-- 利用Flask和Redis技术实现模型的服务化封装与部署
-- 设计了特征提取模块，从URL中提取语义和结构特征
-- 相关成果被发表在中文核心期刊《现代电子技术》</p>
-                        <div class="project-tags">
-                            <span class="project-tag">机器学习</span>
-                            <span class="project-tag">特征工程</span>
-                            <span class="project-tag">集成学习</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 页脚部分 -->
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 姚兴博. 保留所有权利。</p>
+            <p>&copy; 2025 Xingbo Yao. All rights reserved.</p>
         </div>
     </footer>
     
     <script>
-        // 实现打字效果
+        // Typing effect implementation
         const titles = [
-            "人工智能研究者",
-            "机器学习工程师", 
-            "计算机视觉研究者",
-            "算法爱好者"
+            "AI Researcher",
+            "Machine Learning Engineer", 
+            "Computer Vision Researcher",
+            "Algorithm Enthusiast"
         ];
         
         let currentIndex = 0;
@@ -1077,24 +914,24 @@
             const currentTitle = titles[currentIndex];
             
             if (isDeleting) {
-                // 删除文字
+                // Delete text
                 changingText.textContent = currentTitle.substring(0, charIndex - 1);
                 charIndex--;
                 typingSpeed = deletingSpeed;
             } else {
-                // 添加文字
+                // Add text
                 changingText.textContent = currentTitle.substring(0, charIndex + 1);
                 charIndex++;
                 typingSpeed = 100;
             }
             
-            // 如果完成了当前单词的输入
+            // If current word typing is complete
             if (!isDeleting && charIndex === currentTitle.length) {
-                // 暂停，然后开始删除
+                // Pause, then start deleting
                 isDeleting = true;
                 typingSpeed = pauseTime;
             } else if (isDeleting && charIndex === 0) {
-                // 完成删除，移动到下一个单词
+                // Deletion complete, move to next word
                 isDeleting = false;
                 currentIndex = (currentIndex + 1) % titles.length;
             }
@@ -1102,10 +939,10 @@
             setTimeout(typeEffect, typingSpeed);
         }
         
-        // 启动打字效果
+        // Start typing effect
         window.addEventListener('load', typeEffect);
         
-        // 平滑滚动效果
+        // Smooth scrolling effect
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1118,4 +955,3 @@
     </script>
 </body>
 </html>
-
