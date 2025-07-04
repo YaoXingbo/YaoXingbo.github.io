@@ -344,6 +344,30 @@
             border-radius: 6px;
         }
         
+        /* Journal Tag Styles */
+        .journal-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+        }
+        
+        .journal-tag.iccv {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+        
+        .journal-tag.jfr {
+            background: linear-gradient(135deg, #4834d4, #686de0);
+        }
+        
         .paper-content {
             flex: 1;
             padding: 25px;
@@ -677,6 +701,7 @@
             <div class="papers-container">
                 <div class="paper-card">
                     <div class="paper-image">
+                        <div class="journal-tag iccv">ICCV 2025</div>
                         <img src="3.png" alt="Paper Image">
                     </div>
                     <div class="paper-content">
@@ -689,6 +714,7 @@
                 
                 <div class="paper-card">
                     <div class="paper-image">
+                        <div class="journal-tag jfr">J. Field Robotics</div>
                         <img src="1.png" alt="Paper Image">
                     </div>
                     <div class="paper-content">
